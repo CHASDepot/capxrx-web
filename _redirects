@@ -1,0 +1,2 @@
+# Force apex -> www (both domains must be attached to the Pages project)
+https://capxrx.com/* https://www.capxrx.com/:splat 301!
