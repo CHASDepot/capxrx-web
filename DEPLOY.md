@@ -1,9 +1,22 @@
-# Deploying CapXRx splash → Cloudflare Pages → www.capxrx.com
+# Deploying CapXRx splash → Cloudflare Pages → capxrx.com / www.capxrx.com
 
-This is a **zero-build static site**. The whole deploy is: GitHub repo → Cloudflare
-Pages project → attach the custom domain. Your `capxrx.com` zone is already on
-Cloudflare (it runs your email routing), so the DNS records get created for you
-automatically when you attach the domain — you mostly just click "Activate."
+> ## ⚡ How to deploy now: `./deploy.sh`
+>
+> This site ships by **direct upload** to the `capxrx-web` Pages project — NOT
+> by Git push. Just run `./deploy.sh` from this folder. Done.
+>
+> **Why not Git auto-deploy?** The `capxrx-web` Pages project's Git integration
+> had been connected to the **wrong repo** (the CapBx *app*), so every app deploy
+> published the app's unbuilt source onto `capxrx.com` and broke the marketing
+> page (blank screen — browser trying to load `/src/main.jsx`). The Git
+> integration is now **disconnected** on purpose; direct upload is the source of
+> truth. If you ever reconnect Git, point it at **`CHASDepot/capxrx-web`** only.
+
+This is a **zero-build static site**. Historically it was set up as: GitHub repo →
+Cloudflare Pages Git auto-deploy. That's the setup the sections below describe, and
+it's fine — *as long as the project is connected to this repo and not the app repo.*
+Your `capxrx.com` zone is already on Cloudflare (it runs your email routing), so the
+DNS records get created for you automatically when you attach the domain.
 
 ---
 
